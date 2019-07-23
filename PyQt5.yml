@@ -23,7 +23,43 @@ QT对象中只有QLabel标签对象才可以有伙伴窗口部件，也只有QLa
 
 10.sizePolicy 尺寸策略    可以用于在水平布局（horizonal layout）/垂直布局（vertical layout）中，
 划分控件所占布局的比列。 比如，在水平布局中，水平策略那一栏选择Expanding ，如果要占布局的2/3，
-则水平伸展设置为2；另一个水平伸展设置为1
+则水平伸展设置为2；另一个水平伸展设置为1；垂直布局类推
+
+
+11.有三种窗口类型：
+QMainWindow:可以包含菜单栏、工具栏、状态栏和标题栏，是最常见的窗口形式
+QDialog:是对话框的基类。
+QWidget:不确定窗口的用途，就使用它。
+
+
+12. 让屏幕居中，编写如下函数，一定要在__init__中初始化----------self.center
+    def center(self):
+        #获取屏幕的坐标
+        screen=QDesktopWidget().screenGeometry()  #导入QDesktopWidget模块
+        #获取窗口的坐标
+        size=self.geometry()
+        newTop=(screen.height()-size.height())/2
+        newLeft=(screen.width()-size.width())/2
+        #移动到指定位置
+        self.move(newLeft,newTop)
+        
+13.  用Ot Desinger设计窗口，生成的UI文件转化为.py文件后，再创建一个文件，把转化的文件导入到现有文件中，
+并且在末尾加上if语句
+     import first   #导入生成的模块（文件）
+
+     if __name__ == '__main__':   #确保if一下的语句只在当前窗口下运行
+        app=QApplication(sys.argv)    #创建一个应用（创建一个QAPPlication类实列）
+        mainWindow=QMainWindow()      #创建一个主窗口
+        ui = first.Ui_MainWindow()    #创建一个类实例， 文件名+类名
+        ui.setupUi(mainWindow)        #向主窗口上添加控件，入口参数是mainWindow
+        mainWindow.show()             #显示主窗口
+        sys.exit(app.exec_())         #进入程序主循环，并通过exit()函数确保主循环安全退出
+
+14.设置git \pycharm \github 的网址:https://www.cnblogs.com/fanyuchen/p/7149974.html
+首先：通过pycharm在github中创建一个repository,-----VCS/Import Into Versioncontrol/share porject to github
+然后：把代码上传到git，setting-git-commiting Files ----commit and push
+最后：把本地修改同步到github上，点击setting--git--repository--push
+
 
  
 
