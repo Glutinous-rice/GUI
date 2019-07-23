@@ -1,0 +1,19 @@
+在cmd里直接输入
+pip install PyQt5 -i https://pypi.douban.com/simple
+pip install PyQt5-tools -i https://pypi.douban.com/simple
+
+
+
+‘w = QWidget()
+QWidget类提供的常用坐标系统成员函数有:
+resize() :   设置窗口内部的宽高( width()和height()值)
+move() :   设置整个窗口的x,y坐标( x()和y()值)
+setGeometry() :  设置窗口内部的x,y,w,h(不包括标题和窗口边框)
+size()  :  获取窗口部件的大小
+pos() :   获取窗口部件的位置
+x()  :      获取整个窗口x坐标
+y()  :      获取整个窗口y坐标
+width()  :   获取窗口内部的宽度(不包括外边框的宽度)
+height()  :   获取窗口内部的高度(不包括窗口标题栏的高度)
+const QRect&  geometry ()  :   获取窗口内部的x,y,w,h(不包括标题和窗口边框)
+const QRect&  framgeometry ()  :   获取整个窗口的x,y,w,h’
