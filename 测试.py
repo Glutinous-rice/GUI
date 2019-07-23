@@ -30,3 +30,7 @@ if __name__ == '__main__':
     main=toolTip()
     main.show()
     sys.exit(app.exec_())
+
+"""
+ssssssssssssssssssssssssssssssssssssssssssss
+"""
